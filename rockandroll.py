@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -8,8 +9,7 @@ import time
 
 
 mails = ['admi0nest@yahoo.com', 'admi9ntest@gmail.com'] #list of emails go here
-PATH = "/usr/local/bin/chromedriver" 
-driver = webdriver.Chrome(PATH)
+driver = webdriver.Chrome(ChromeDriverManager().install())
 url = "https://vote.rockhall.com/results"
 driver.get(url) 
 
